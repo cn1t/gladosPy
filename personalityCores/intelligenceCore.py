@@ -1,5 +1,4 @@
 import asyncio
-
 from imutils import paths
 import face_recognition
 import pickle
