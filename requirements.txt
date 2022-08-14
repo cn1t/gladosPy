@@ -1,0 +1,4 @@
+playsound~=1.3.0
+colorama~=0.4.5
+gTTS~=2.2.4
+requests~=2.27.1
