@@ -17,7 +17,7 @@ import os
 from picamera import PiCamera
 from picamera.array import PiRGBArray
 
-# 246 character messages max
+# 100 or 246 character messages max
 
 r = sr.Recognizer()
 r.energy_threshold = 4000
@@ -66,7 +66,7 @@ def glados_speak(audio_string):
     preManufacturedText4 = preManufacturedText3.replace(':', '')
     audio_string_end = preManufacturedText4.replace('ä', 'ae')
     audio_file = 'audio-' + str(audio_string_end) + '.mp3'
-    path = os.path.join('''home/pi/gladosPy/soundFiles''', audio_file)
+    path = os.path.join('''/home/pi/gladosPy/soundFiles''', audio_file)
     if not os.path.isfile(path): #If audio file doesnt already exist
         tts = gTTS(text=audio_string_end, lang='de', slow=False) #Generate tts
         tts.save(path)
@@ -175,30 +175,30 @@ rawCapture = PiRGBArray(cam, size=(512, 304))
 
 def headshotCam():
 	print("e")
-	glados_speak("Bitte sage deinen Namen laut und deutlich.")
+	glados_speak("Bitte sage deinen Namen laut und deutlich")
 
 	hMode = True
 	hMode2 = False
 	nameValid = False
 	enteredName = "Error"
-	glados_speak("Bitte sage deinen Namen laut und deutlich.")
+	glados_speak("Bitte sage deinen Namen laut und deutlich")
 	while hMode == True:
 		voice_data = record_audio()
 
 		if voice_data != None:
 
-			glados_speak(f"Ist der Name: {voice_data} richtig? Bitte wiederhole deinen Namen.")
+			glados_speak(f"Ist der Name: {voice_data} richtig? Bitte wiederhole deinen Namen")
 			enteredName = voice_data
 			hMode = False
 			hMode2 = True
-	glados_speak("Bitte sage deinen Namen laut und deutlich.")
+	glados_speak("Bitte sage deinen Namen laut und deutlich")
 	while hMode2 == True:
 		voice_data = record_audio()
 
 		if voice_data != None:
 			if enteredName != voice_data:
-				glados_speak("Dieser Name entspricht nicht dem vorher genannten Namen.")
-				glados_speak("Gesichtsregistrierung wird geschlossen.")
+				glados_speak("Dieser Name entspricht nicht dem vorher genannten Namen")
+				glados_speak("Gesichtsregistrierung wird geschlossen")
 				hMode2 = False
 			else:
 				glados_speak(f"Der folgende Name wurde festgelegt: {enteredName}")
@@ -209,7 +209,7 @@ def headshotCam():
 		name = enteredName
 		img_counter = 0
 
-		glados_speak("Ich werde jetzt 10 Fotos aufnehmen. Bitte nutze unterschiedliche Gesichtsausdrücke oder Winkel.")
+		glados_speak("Ich werde jetzt 10 Fotos aufnehmen. Bitte nutze unterschiedliche Gesichtsausdrücke oder Winkel")
 		asyncio.sleep(2)
 
 		while True:
@@ -231,7 +231,7 @@ def headshotCam():
 				break
 
 		cv2.destroyAllWindows()
-		glados_speak("Alle Fotos wurden aufgenommen.")
+		glados_speak("Alle Fotos wurden aufgenommen")
 
 
 def trainModel():
