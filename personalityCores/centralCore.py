@@ -11,7 +11,6 @@ from configparser import ConfigParser
 from gtts import gTTS
 import random
 from factCore import randomFact, weatherFrog
-from intelligenceCore import headshotCam
 import pickle
 import cv2
 import os
