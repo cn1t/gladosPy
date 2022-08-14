@@ -15,6 +15,7 @@ cam.framerate = 10
 rawCapture = PiRGBArray(cam, size=(512, 304))
 
 def headshotCam():
+	print("e")
 	glados_speak("Bitte sage deinen Namen laut und deutlich.")
 
 	hMode = True

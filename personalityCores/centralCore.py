@@ -10,13 +10,14 @@ import time
 from configparser import ConfigParser
 from gtts import gTTS
 import random
-from personalityCores.factCore import randomFact, weatherFrog
+from factCore import randomFact, weatherFrog
+from intelligenceCore import headshotCam
 
 # 246 character messages max
 
 r = sr.Recognizer()
 r.energy_threshold = 4000
-file = "configFiles/userData.ini"
+file = "../configFiles/userData.ini"
 userData = ConfigParser()
 userData.read(file)
 
@@ -61,7 +62,7 @@ def glados_speak(audio_string):
     preManufacturedText4 = preManufacturedText3.replace(':', '')
     audio_string_end = preManufacturedText4.replace('ä', 'ae')
     audio_file = 'audio-' + str(audio_string_end) + '.mp3'
-    path = os.path.join('''C:\\Users\\Mathis\\PycharmProjects\\gladosPy\\soundFiles''', audio_file)
+    path = os.path.join('''home/pi/gladosPy/soundFiles''', audio_file)
     if not os.path.isfile(path): #If audio file doesnt already exist
         tts = gTTS(text=audio_string_end, lang='de', slow=False) #Generate tts
         tts.save(path)
@@ -163,6 +164,8 @@ def respond(voice_data):
     else:
         pass
 
-while True: #Run glados
-    voice_data = record_audio()
-    respond(voice_data)
+#while True: #Run glados
+#    voice_data = record_audio()
+#    respond(voice_data)
+
+headshotCam()
