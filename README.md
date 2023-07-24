@@ -6,7 +6,7 @@ Inspiriert von GLaDOS aus Portal.
 
 Die Cores stellen Kategorien dar, in welche Funktionen eingeordnet werden. Soll später auf einem RaspberryPi laufen.
 
-Zu verschiedenen Themen gibt es eine reputation und diese werden manipuliert, basierend auf wie man mit gladosPy umgeht.
+Zu verschiedenen Themen gibt es eine reputation und diese werden manipuliert, basierend darauf, wie man mit gladosPy umgeht.
 Ähnlich ist es mit Emotionen. Basierend auf der Emotion gibt es verschieden Antworten, usw.
 
 TTS-Nachrichten können maximal 246 Buchstaben haben.
