@@ -1,5 +1,5 @@
 # gladosPy
-STILL IN DEVELOPMENT | GERMAN ONLY
+## STILL IN DEVELOPMENT | GERMAN ONLY
 
 
 Inspiriert von GLaDOS aus Portal.
